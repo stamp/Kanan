@@ -25,7 +25,6 @@ Bygget
 
 Bygget av kanan påbörjades 21 Juli, och det första provåket gjordes 29 Juli. Arbetslaget har varierat mellan 4 och 8 personer, totalt har ~1000 arbetstimmar lagts på bygget.
 ##Elektronik
-
 Kanan styrs helt elektroniskt via ett stort antal komponenter som reglerar allt från vattenpump och ljud till stoppljus och målkamera. Samtliga kontroller är tillgängliga från Funk-teamets mobiltelefoner så hela vattenruschkanan kan styras från en smartphone. Komponenterna pratar med varandra över ett UDP-baserat protokoll och kommunicerar via både trådlöst internet, nätverkskabel och hemmabyggda lösningar.
 
 ##Pumpen
@@ -35,6 +34,5 @@ Pumpen styrs via en PLC och ett php-bibliotek kallat Beckhoff (http://github.com
 
 Stoppljuset styrs på två olika sätt, antingen i s.k. automatläge där PLC:en själv administrerar start/stopp genom sensorer i början och slutet på banan eller i kommandoläge där PLC:en och Ruby-demonen samarbetar och gemensamt hanterar läge på stoppljuset. Stoppljust kan även styras på manuell override genom Funk-teamets mobiltelefoner.
 ##Musik/Ljudeffekter
-
 Kanan har ett ljudsystem som kan kontrolleras från mobiltelefonerna för att dels spela ljudeffekter såsom applåder eller gapskratt, dels för att spela t.ex. webbradio eller mp3-bibliotek. Ljudeffekterna kontrolleras med en annan Ruby-demon som lyssnar på samma UDP-protokoll som resten av systemet. Detta körs på en FitPC inkopplad till PA-anläggningen.
 
