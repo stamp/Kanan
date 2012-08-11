@@ -1,0 +1,48 @@
+---
+5020defda9727:
+  name: nophoto
+  conditions:
+    - 
+      state: beckhoff.Interface.obNoPhoto
+      type: EQ
+      value: 1
+  enter:
+    - 
+        to: bunny
+        value: smb3_power-up.wav
+  exit: [ ]
+  active: false
+
+5020defda9728:
+  name: go
+  conditions:
+    - 
+      state: beckhoff.Interface.onState
+      type: EQ
+      value: 3
+  enter:
+    - 
+        to: bunny
+        value: go.ogg
+  exit: [ ]
+  active: false
+
+5020defda9729:
+  name: startup
+  conditions:
+    - 
+      state: beckhoff.Interface.ibPump
+      type: EQ
+      value: 1
+  enter:
+    - 
+        to: bunny
+        cmd: start
+    - 
+        to: bunny
+        value: smb3_power-up.wav
+  exit: 
+    - 
+        to: bunny
+        cmd: stop
+  active: false
